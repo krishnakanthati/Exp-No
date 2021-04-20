@@ -17,9 +17,13 @@ def cycle(li1, li2):
         else:
             n = random.randint(1, 10)
     else:
-        li1, li2 = li2, li1
-        print("New Cycle")
-        cycle(li1, li2)
+        if command != 'next':
+            command = str(input("Enter your command "))
+            cycle(li1, li2)
+        else:
+            li1, li2 = li2, li1
+            print("New Cycle")
+            cycle(li1, li2)
 
 
 cycle(li1, li2)
